@@ -12,6 +12,9 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="css/checkout.css" />
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </head>
   <body>
     <header>
@@ -109,7 +112,9 @@
               <label>
                 <input type="checkbox" checked="checked" name="sameadr" /> Shipping address same as billing
               </label>
-              <button type="submit" class="btn btn-primary">Continue to Checkout</button>
+              <!-- <a href="index.html"> -->
+              <button type="button" class="btn btn-primary" id="checkoutButton">Continue to Checkout</button>
+            <!-- </a> -->
             </form>
           </div>
         </div>
@@ -120,7 +125,7 @@
               <li class="list-group-item d-flex justify-content-between align-items-start">
                 <div class="ms-2 me-auto">
                   <div class="fw-bold">Shoes</div>
-                  <img src="Photos/Shoes.jpeg" alt="Shoes" class="img-thumbnail mb-2" />
+                  <img src="Photos/sneakers.png" alt="Shoes" class="img-thumbnail mb-2" />
                   <div>Price: $50.00</div>
                   <div>Quantity: 1</div>
                 </div>
@@ -128,8 +133,8 @@
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-start">
                 <div class="ms-2 me-auto">
-                  <div class="fw-bold">Hat</div>
-                  <img src="Photos/Hat.jpeg" alt="Hat" class="img-thumbnail mb-2" />
+                  <div class="fw-bold">Sunglasses</div>
+                  <img src="Photos/sunglasses.png" alt="Hat" class="img-thumbnail mb-2" />
                   <div>Price: $20.00</div>
                   <div>Quantity: 2</div>
                 </div>
@@ -138,7 +143,7 @@
               <li class="list-group-item d-flex justify-content-between align-items-start">
                 <div class="ms-2 me-auto">
                   <div class="fw-bold">T-Shirt</div>
-                  <img src="Photos/Shirt.jpg" alt="Shirt" class="img-thumbnail mb-2" />
+                  <img src="Photos/shirt (1).png" alt="Shirt" class="img-thumbnail mb-2" />
                   <div>Price: $15.00</div>
                   <div>Quantity: 3</div>
                 </div>
@@ -152,7 +157,7 @@
               </li>
             </ol>
             <div class="d-flex justify-content-end mt-3">
-              <button class="btn btn-primary">Checkout</button>
+              <button class="btn btn-primary">Checkout</button> 
             </div>
           </div>
       </div>
@@ -167,5 +172,32 @@
       integrity="sha384-sisClauhgX0h7UMUMjT4MCslGNF8wYxmgYx7sZqMWD+OvlT/aD6CQDpoRe3U4l6E"
       crossorigin="anonymous"
     ></script>
+
+
+  <script>
+    $(document).ready(function(){
+      $('#checkoutButton').on('click', function(){
+        $('#thankYouModal').modal('show');
+      });
+    });
+  </script>
+
+<div class="modal fade" id="thankYouModal" tabindex="-1" aria-labelledby="thankYouModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="thankYouModalLabel">Order Confirmation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Thank you for your order!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
   </body>
 </html>
